@@ -6,13 +6,17 @@
 /*   By: miduarte <miduarte@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 12:00:56 by miduarte          #+#    #+#             */
-/*   Updated: 2025/04/04 15:54:08 by miduarte         ###   ########.fr       */
+/*   Updated: 2025/04/07 14:34:57 by miduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_print_alphabet(void)
+#include <unistd.h>
+
+void	ft_putchar(char c);
+
+void	ft_print_alphabet(void)
 {
-	int i;
+	int	i;
 
 	i = 'a';
 	while (i <= 'z')

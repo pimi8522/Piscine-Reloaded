@@ -6,11 +6,11 @@
 /*   By: miduarte <miduarte@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 12:22:28 by miduarte          #+#    #+#             */
-/*   Updated: 2025/04/05 12:34:18 by miduarte         ###   ########.fr       */
+/*   Updated: 2025/04/07 12:36:53 by miduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 

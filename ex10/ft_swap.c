@@ -6,13 +6,14 @@
 /*   By: miduarte <miduarte@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 12:40:10 by miduarte          #+#    #+#             */
-/*   Updated: 2025/04/04 12:43:26 by miduarte         ###   ########.fr       */
+/*   Updated: 2025/04/07 12:28:42 by miduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_swap(int *a, int *b)
 {
-	int swapper;
+	int	swapper;
+
 	swapper = *a;
 	*a = *b;
 	*b = swapper;

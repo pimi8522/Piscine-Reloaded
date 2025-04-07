@@ -6,11 +6,11 @@
 /*   By: miduarte <miduarte@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 12:18:18 by miduarte          #+#    #+#             */
-/*   Updated: 2025/04/05 12:20:02 by miduarte         ###   ########.fr       */
+/*   Updated: 2025/04/07 12:36:36 by miduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
 	int	i;
 

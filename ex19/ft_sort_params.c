@@ -5,70 +5,61 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: miduarte <miduarte@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/05 13:27:29 by miduarte          #+#    #+#             */
-/*   Updated: 2025/04/05 21:11:03 by miduarte         ###   ########.fr       */
+/*   Created: 2025/04/05 12:36:38 by miduarte          #+#    #+#             */
+/*   Updated: 2025/04/07 14:27:56 by miduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-void ft_putstr(char *str)
-{
-	int  i;
+void	ft_putchar(char c);
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
+void	ft_swap(char **a, char **b)
+{
+	char	*tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
-int ft_strcmp(char *s1, char *s2)
+
+void	ft_sort_params(int argc, char **argv)
 {
 	int	i;
+	int	swapped;
 
-	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0')
+	swapped = 1;
+	while (swapped)
 	{
-		if ((s1[i] - s2[i]) != 0)
+		swapped = 0;
+		i = 1;
+		while (i < argc - 1)
 		{
-			return (s1[i] - s2[i]);
-		}
-		else
+			if (argv[i][0] > argv[i + 1][0])
+			{
+				ft_swap(&argv[i], &argv[i + 1]);
+				swapped = 1;
+			}
 			i++;
+		}
 	}
-	return (0);
 }
 
 int	main(int argc, char *argv[])
 {
 	int	i;
-	int swapped;
-	int	n;
-	char	*tmp;
 
+	ft_sort_params(argc, argv);
 	i = 1;
-	n = argc - 1;
-	swapped = 0;
-	while (n > 0)
+	while (i < argc)
 	{
-		swapped = 0;
-		i = 1;
-		while (i < n)
+		while (*argv[i])
 		{
-			if (ft_strcmp(argv[i], argv[i + 1]) > 0)
-			{
-				tmp = argv[i];
-        	    argv[i] = argv[i + 1];
-        	    argv[i + 1] = tmp;
-				swapped = 1;
-			}
-			i++;
+			ft_putchar(*argv[i]);
+			argv[i]++;
 		}
+		ft_putchar('\n');
+		i++;
 	}
 	return (0);
 }

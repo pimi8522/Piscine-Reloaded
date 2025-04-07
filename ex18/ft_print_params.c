@@ -6,63 +6,30 @@
 /*   By: miduarte <miduarte@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 12:36:38 by miduarte          #+#    #+#             */
-/*   Updated: 2025/04/05 21:29:03 by miduarte         ###   ########.fr       */
+/*   Updated: 2025/04/07 14:27:44 by miduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void    ft_putchar(char c)
+void	ft_putchar(char c);
+
+int	main(int argc, char *argv[])
 {
-    write(1, &c, 1);
-}
+	int	i;
+	int	i2;
 
-void    ft_swap(char **a, char **b)
-{
-    char    *tmp;
-
-    tmp = *a;
-    *a = *b;
-    *b = tmp;
-}
-
-void    ft_sort_params(int argc, char **argv)
-{
-    int    i;
-    int    swapped;
-
-    swapped = 1;
-    while (swapped)
-    {
-        swapped = 0;
-        i = 1;
-        while (i < argc - 1)
-        {
-            if (argv[i][0] > argv[i + 1][0])
-            {
-                ft_swap(&argv[i], &argv[i + 1]);
-                swapped = 1;
-            }
-            i++;
-        }
-    }
-}
-
-int    main(int argc, char *argv[])
-{
-    int    i;
-
-    ft_sort_params(argc, argv);
-    i = 1;
-    while (i < argc)
-    {
-        while (*argv[i])
-        {
-            ft_putchar(*argv[i]);
-            argv[i]++;
-        }
-        ft_putchar('\n');
-        i++;
-    }
-    return (0);
+	i = 1;
+	while (i < argc)
+	{
+		i2 = 0;
+		while (argv[i][i2] != '\0')
+		{
+			ft_putchar(argv[i][i2]);
+			i2++;
+		}
+		i++;
+		ft_putchar('\n');
+	}
+	return (0);
 }
