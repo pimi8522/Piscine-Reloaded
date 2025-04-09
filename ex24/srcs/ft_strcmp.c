@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miduarte <miduarte@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/05 21:12:37 by miduarte          #+#    #+#             */
-/*   Updated: 2025/04/07 16:04:12 by miduarte         ###   ########.fr       */
+/*   Created: 2025/04/05 12:22:28 by miduarte          #+#    #+#             */
+/*   Updated: 2025/04/07 12:36:53 by miduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int	ft_strlen(char *str)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
-char *ft_strdup(char *src)
-{
-	int	srclen;
-	char	*dest;
-	int	i;
-	
-	i = 0;
-	srclen = ft_strlen(src);
-	dest = malloc(sizeof(char) * srclen + 1);
-	while (src[i] != '\0')
+	while (s1[i] != '\0' && s2[i] != '\0')
 	{
-		dest[i] = src[i];
-		i++;
+		if ((s1[i] - s2[i]) != 0)
+		{
+			return (s1[i] - s2[i]);
+		}
+		else
+			i++;
 	}
-	dest[i] = '\0';
-	return(dest);
+	return (0);
 }

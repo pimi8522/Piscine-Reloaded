@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miduarte <miduarte@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/05 21:12:37 by miduarte          #+#    #+#             */
-/*   Updated: 2025/04/07 16:04:12 by miduarte         ###   ########.fr       */
+/*   Created: 2025/04/04 14:54:57 by miduarte          #+#    #+#             */
+/*   Updated: 2025/04/07 14:28:10 by miduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <unistd.h>
 
-int	ft_strlen(char *str)
+void	ft_putchar(char c);
+
+void	ft_putstr(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
-char *ft_strdup(char *src)
-{
-	int	srclen;
-	char	*dest;
-	int	i;
-	
-	i = 0;
-	srclen = ft_strlen(src);
-	dest = malloc(sizeof(char) * srclen + 1);
-	while (src[i] != '\0')
 	{
-		dest[i] = src[i];
+		ft_putchar(str[i]);
 		i++;
 	}
-	dest[i] = '\0';
-	return(dest);
 }
