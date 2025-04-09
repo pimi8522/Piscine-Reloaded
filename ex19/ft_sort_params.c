@@ -6,7 +6,7 @@
 /*   By: miduarte <miduarte@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 12:36:38 by miduarte          #+#    #+#             */
-/*   Updated: 2025/04/07 14:27:56 by miduarte         ###   ########.fr       */
+/*   Updated: 2025/04/09 11:03:56 by miduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,50 +14,57 @@
 
 void	ft_putchar(char c);
 
-void	ft_swap(char **a, char **b)
-{
-	char	*tmp;
-
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
-}
-
-void	ft_sort_params(int argc, char **argv)
+void	ft_putstr(char *str)
 {
 	int	i;
-	int	swapped;
 
-	swapped = 1;
-	while (swapped)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		swapped = 0;
-		i = 1;
-		while (i < argc - 1)
-		{
-			if (argv[i][0] > argv[i + 1][0])
-			{
-				ft_swap(&argv[i], &argv[i + 1]);
-				swapped = 1;
-			}
-			i++;
-		}
+		ft_putchar(str[i]);
+		i++;
 	}
+}
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] != '\0' && s2[i] != '\0')
+	{
+		if ((s1[i] - s2[i]) != 0)
+		{
+			return (s1[i] - s2[i]);
+		}
+		else
+			i++;
+	}
+	return (0);
 }
 
 int	main(int argc, char *argv[])
 {
-	int	i;
+	int		i;
+	int		i2;
+	char	*temp;
 
-	ft_sort_params(argc, argv);
 	i = 1;
+	i2 = 1;
 	while (i < argc)
 	{
-		while (*argv[i])
+		i2 = i + 1;
+		while (i2 < argc)
 		{
-			ft_putchar(*argv[i]);
-			argv[i]++;
+			if (ft_strcmp(argv[i], argv[i2]) > 0)
+			{
+				temp = argv[i];
+				argv[i] = argv[i2];
+				argv[i2] = temp;
+			}
+			i2++;
 		}
+		ft_putstr(argv[i]);
 		ft_putchar('\n');
 		i++;
 	}

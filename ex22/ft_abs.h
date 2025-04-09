@@ -6,12 +6,11 @@
 /*   By: miduarte <miduarte@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 16:25:28 by miduarte          #+#    #+#             */
-/*   Updated: 2025/04/07 16:37:53 by miduarte         ###   ########.fr       */
+/*   Updated: 2025/04/09 11:13:23 by miduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ABS_H
-# define ABS_H
-#define ABS(Value) ((Value < 0) ? -(Value) : (Value))
-
+#ifndef FT_ABS_H
+# define FT_ABS_H
+# define ABS(Value) ((Value < 0) ? -(Value) : (Value))
 #endif

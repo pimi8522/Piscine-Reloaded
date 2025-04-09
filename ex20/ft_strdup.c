@@ -6,7 +6,7 @@
 /*   By: miduarte <miduarte@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 21:12:37 by miduarte          #+#    #+#             */
-/*   Updated: 2025/04/07 16:04:12 by miduarte         ###   ########.fr       */
+/*   Updated: 2025/04/09 11:05:26 by miduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char *ft_strdup(char *src)
+char	*ft_strdup(char *src)
 {
-	int	srclen;
+	int		srclen;
 	char	*dest;
-	int	i;
-	
+	int		i;
+
 	i = 0;
 	srclen = ft_strlen(src);
 	dest = malloc(sizeof(char) * srclen + 1);
@@ -37,5 +37,5 @@ char *ft_strdup(char *src)
 		i++;
 	}
 	dest[i] = '\0';
-	return(dest);
+	return (dest);
 }
